@@ -1,6 +1,7 @@
 # I'll use this workflow to run my main script every hour
 name: Cron Job
-on:
+on:    
+  workflow_dispatch:
   schedule:
     - cron: '*/5 * * * *'
 jobs:
