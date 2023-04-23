@@ -1,0 +1,17 @@
+# I'll use this workflow to run my main script every hour
+name: Cron Job
+on:
+  schedule:
+    - cron: '0 * * * *'
+jobs:
+  cron:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      # Build the project
+      - name: Build
+        run: npm run build
+      # Run the main script
+      - name: Run
+        run: npm run start
+        
