@@ -8,6 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      # Install dependencies
+      - name: Install
+        run: npm install
+      # Create a .env file
+      - name: 'Create env file'
+        run: |
+          echo "${{ secrets.ENV_FILE }}" > .env
       # Build the project
       - name: Build
         run: npm run build
